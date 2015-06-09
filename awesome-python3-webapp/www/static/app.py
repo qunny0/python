@@ -15,6 +15,7 @@ from datetime import datetime
 from aiohttp import web
 
 import orm
+from models import User, Blog, Comment
 
 # def index(request):
 # 	return web.Response(body=b'<h1>Awesome</h1>')
@@ -32,3 +33,6 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(init(loop))
 loop.run_forever()
 
+
+def test():
+	yield from com.create_pool(user='www-data')
