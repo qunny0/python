@@ -1,6 +1,8 @@
 #-*-coding:utf-8-*-
 
 from flask import Flask, url_for
+from flask import render_template
+
 app = Flask(__name__)
 
 # 开启debug模式，修改文件后会重新加载文件
@@ -37,7 +39,8 @@ app.debug = True
 ########## URL Contruct ##########
 @app.route('/')
 def index():
-	pass
+	return render_template('hello.html', name = "qunny")
+	# return "Welcome To Thorn."
 
 @app.route('/login')
 def login():
@@ -47,11 +50,12 @@ def login():
 def profile(username):
 	pass
 
-with app.test_request_context():
-	print url_for('index')
-	print url_for('login')
-	print url_for('login', next = '/')
-	print url_for('profile', username='john Doe')
+# with app.test_request_context():
+# 	print("hahaha")
+# 	print url_for('index')
+# 	print url_for('login')
+# 	print url_for('login', next = '/')
+# 	print url_for('profile', username='john Doe')
 
 
 if __name__ == '__main__':
