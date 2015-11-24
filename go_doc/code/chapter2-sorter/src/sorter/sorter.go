@@ -16,9 +16,10 @@ import (
 	"io";
 	"os";
 	"strconv";
+	"time";
 				
-	"algorithm/bubblesort";	// algorithm
-	"algorithm/qsort";
+	"algorithms/bubblesort";	// algorithm
+	"algorithms/qsort";
 )
 
 var infile *string = flag.String("i", "infile", "File contains values for sorting")
@@ -100,7 +101,7 @@ func main() {
 		
 		fmt.Println("The sorting process costs ", t2.Sub(t1), " to complete.")
 		
-		writeValues(values)
+		writeValues(values, *outfile)
 		
 	} else {
 		fmt.Println(err)	

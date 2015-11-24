@@ -1,5 +1,5 @@
 // bubblesort
-package bubbleSort
+package bubblesort
 
 func BubbleSort(values []int) {
 	flag := true
